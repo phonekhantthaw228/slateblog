@@ -22,8 +22,7 @@ class PostFactory extends Factory
             'user_id'=>rand(1,10),
             'category_id'=>rand(1,10),
             'content'=>fake()->paragraphs(5, true),
-            'image' => 'https://picsum.photos' . fake()->numberBetween(1, 1000),
-
+            'image' => 'https://picsum.photos/seed/' . fake()->numberBetween(1, 1000) . '/800/600',
         ];
     }
 }

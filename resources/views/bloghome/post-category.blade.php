@@ -14,16 +14,7 @@
             <div class="row">
                 <!-- Blog entries-->
                 <div class="col-lg-8">
-            <!-- Featured blog post-->
-                    <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="{{ $featuredPost->image }}" alt="..." /></a>
-                        <div class="card-body">
-                            <div class="small text-muted">{{ $featuredPost->created_at->format('M d, Y') }}</div>
-                            <h2 class="card-title">{{ $featuredPost->title }}</h2>
-                            <p class="card-text">{{ $featuredPost->content }}</p>
-                            <a class="btn btn-primary" href="{{route('post-Individual', $featuredPost->id)}}">Read more →</a>
-                        </div>
-                    </div>
+           
                  <!-- Nested row for non-featured blog posts-->
                         <div class="row">
                             @foreach($otherPosts as $post)
@@ -59,8 +50,9 @@
                                         <ul class="list-unstyled mb-0">
                                             {{-- Loop through the categories within this chunk --}}
                                             @foreach($chunk as $category)
-                                                {{-- Replace 'name' with your actual database column name if different --}}
+                                              
                                             <li><a href="{{route('post-category', $category->id)}}">{{ $category->name }}</a></li>                                            @endforeach
+                                            
                                         </ul>
                                     </div>
                                 @endforeach
